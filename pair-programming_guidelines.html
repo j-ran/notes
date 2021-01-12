@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pair Programming | Hackbright Engineering</title>
+
+    <link
+      href="_static/pygments.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="_static/main.css" rel="stylesheet" type="text/css" />
+
+    <script src="_static/pdfobject.min.js"></script>
+  </head>
+  <body>
+    <div id="handouts-container">
+      <header id="page-header">
+        <p id="project-title">Hackbright Engineering</p>
+        <p id="page-title">Pair Programming</p>
+        <p id="backlink">
+          <a href="/"> &laquo; Back to Homepage </a>
+        </p>
+      </header>
+
+      <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Pair Programming</a><ul>
+<li><a class="reference internal" href="#intro">Intro</a><ul>
+<li><a class="reference internal" href="#what-is-pair-programming">What is Pair Programming?</a></li>
+<li><a class="reference internal" href="#goals">Goals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#why-pair-programming">Why Pair Programming?</a><ul>
+<li><a class="reference internal" href="#the-general-idea">The General Idea</a></li>
+<li><a class="reference internal" href="#pair-programming-in-the-industry">Pair Programming in the Industry</a></li>
+<li><a class="reference internal" href="#pair-programming-at-hackbright">Pair Programming at Hackbright</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#guidelines-for-pairing">Guidelines for Pairing</a><ul>
+<li><a class="reference internal" href="#the-driver-navigator">The Driver &amp; Navigator</a></li>
+<li><a class="reference internal" href="#guidelines">Guidelines</a></li>
+<li><a class="reference internal" href="#helpful-tips">Helpful Tips</a></li>
+<li><a class="reference internal" href="#what-can-go-wrong">What Can Go Wrong?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#if-you-re-slower-than-your-pair">If You’re Slower than Your Pair</a></li>
+<li><a class="reference internal" href="#if-you-re-faster-than-your-pair">If You’re Faster than Your Pair</a></li>
+<li><a class="reference internal" href="#if-you-tend-to-be-quiet">If You Tend to be Quiet</a></li>
+<li><a class="reference internal" href="#if-you-tend-to-be-assertive">If You Tend to be Assertive</a></li>
+<li><a class="reference internal" href="#all-types-of-folks-should">All types of folks should…</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lines-to-try-when-things-go-wrong">Lines to Try When Things Go Wrong</a><ul>
+<li><a class="reference internal" href="#before-pairing">Before Pairing</a></li>
+<li><a class="reference internal" href="#during-pairing">During Pairing</a></li>
+<li><a class="reference internal" href="#after-pairing">After Pairing</a></li>
+<li><a class="reference internal" href="#enjoy-pairing">Enjoy Pairing!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+      <main id="page-content">  <section class="section" id="pair-programming">
+<h1>Pair Programming</h1>
+<section class="section" id="intro">
+<h2>Intro</h2>
+<section class="section" id="what-is-pair-programming">
+<h3>What is Pair Programming?</h3>
+<p>Pair programming is where two developers work on a programming task together</p>
+</section>
+<section class="section" id="goals">
+<h3>Goals</h3>
+<p>Talk about what pair programming is and why it’s a common practice in software
+engineering</p>
+<p>We’ll also share strategies and tips for a successful pair programming
+experience!</p>
+<p>During lab, you’ll learn how to start a remote pair programming <span class="raw-revealjs"><br></span>
+session in Visual Studio!</p>
+</section>
+</section>
+<section class="section" id="why-pair-programming">
+<h2>Why Pair Programming?</h2>
+<section class="section" id="the-general-idea">
+<h3>The General Idea</h3>
+<p>Without pair programming:</p>
+<ul class="simple">
+<li class="fragment"><p>You have to come up with an algorithm to solve problem</p></li>
+<li class="fragment"><p><em>And</em> the syntax to express that algorithm at the same time</p></li>
+</ul>
+<p>With pair programming:</p>
+<ul class="simple">
+<li class="fragment"><p>One person comes up with the algorithm</p></li>
+<li class="fragment"><p>The other person produces the syntax</p></li>
+</ul>
+</section>
+<section class="section" id="pair-programming-in-the-industry">
+<h3>Pair Programming in the Industry</h3>
+<p>Professional developers work with <em>huge</em> systems</p>
+<ul class="simple">
+<li class="fragment"><p>The code they write can have far-reaching side effects</p>
+<ul>
+<li><p>It’s impossible for one person to juggle all that in their head</p></li>
+</ul>
+</li>
+<li class="fragment"><p>Also encourages knowledge sharing</p></li>
+<li class="fragment"><p>Studies show that it reduces bugs and increases code quality</p></li>
+</ul>
+</section>
+<section class="section" id="pair-programming-at-hackbright">
+<h3>Pair Programming at Hackbright</h3>
+<p>Learning a new language is hard!</p>
+<ul class="simple">
+<li class="fragment"><p>Pair programming helps you focus on one thing at a time</p>
+<ul>
+<li><p>You’re either thinking about the steps you’ll need to follow to solve
+a problem</p></li>
+<li><p>Or translating those steps into syntax</p></li>
+</ul>
+</li>
+<li class="fragment"><p>It helps you retain knowledge and validate understanding by giving you more
+ways to engage with code</p></li>
+<li class="fragment"><p>Also, having a buddy helps you get unstuck — two heads are better than
+one!</p></li>
+<li class="fragment"><p>It’ll force you to come up with a plan <em>before</em> you type</p></li>
+</ul>
+<p>Also, pair programming requires you to communicate technical ideas effectively</p>
+<ul class="simple">
+<li class="fragment"><p>Communicating technical ideas — explaining and justifying your code —
+is something you’ll be doing a <em>lot</em></p>
+<ul>
+<li><p>During technical interviews</p></li>
+<li><p>On the job, working on a team of developers</p></li>
+</ul>
+</li>
+<li class="fragment"><p>It’s a difficult skill to master, but practice makes perfect!</p></li>
+</ul>
+</section>
+</section>
+<section class="section" id="guidelines-for-pairing">
+<h2>Guidelines for Pairing</h2>
+<section class="section" id="the-driver-navigator">
+<h3>The Driver &amp; Navigator</h3>
+<p>This is a common framework for pairing</p>
+<p>One person is the <cite>driver</cite> and the other person is the <cite>navigator</cite></p>
+<ul class="simple">
+<li><p>Navigators checks the map</p></li>
+<li><p>Drivers steer the ship</p></li>
+</ul>
+<dl>
+<div class="docutils container">
+<dt class="fragment">Driver</dt><dd class="fragment"><ul class="simple">
+<li class="fragment"><p>Translates navigator’s idea into code</p></li>
+<li class="fragment"><p>Focuses on writing correct syntax</p></li>
+<li class="fragment"><p>Asks clarifying questions</p></li>
+</ul>
+</dd>
+</div>
+<div class="docutils container">
+<dt class="fragment">Navigator</dt><dd class="fragment"><ul class="simple">
+<li class="fragment"><p>Provides plan of action</p></li>
+<li class="fragment"><p>Tells the driver what to write (at a high level)</p></li>
+<li class="fragment"><p>Keeps an eye out for any blindspots, pitfalls</p></li>
+</ul>
+</dd>
+</div>
+</dl>
+<div class="fragment docutils container">
+<p>Switch often! (~5 minutes, 2-3 lines of code)</p>
+</div>
+</section>
+<section class="section" id="guidelines">
+<h3>Guidelines</h3>
+<ul class="simple">
+<li><p>Read the problem out loud</p></li>
+<li><p>Ask each other questions</p></li>
+<li><p>Decide on a plan together</p></li>
+<li><p>Silence is <strong>deadly</strong></p></li>
+</ul>
+</section>
+<section class="section" id="helpful-tips">
+<h3>Helpful Tips</h3>
+<ul class="simple">
+<li><p>Take breaks!</p>
+<ul>
+<li><p>At the same time</p></li>
+<li><p>More than you might usually</p></li>
+</ul>
+</li>
+<li><p>Set ground rules for when to get help</p>
+<ul>
+<li><p>5 minutes? 10?</p></li>
+<li><p>After trying this one thing?</p></li>
+</ul>
+</li>
+<li><p>Let your pair know what you want to do before you do it</p>
+<ul>
+<li><p>Propose solutions</p></li>
+<li><p>“Can we…?”</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Reflect on pairing process together</p></li>
+<li><p>Speak up for yourself</p></li>
+<li><p>Step Up / Step Back</p></li>
+<li><p>Be Gentle</p></li>
+</ul>
+</section>
+<section class="section" id="what-can-go-wrong">
+<h3>What Can Go Wrong?</h3>
+<p>Pairing <strong>will</strong> feel weird because most of you have never done it before</p>
+<p>It’s important to acknowledge that it can go wrong at first <span class="raw-revealjs"><br></span>
+and the ways that might happen</p>
+<ul class="simple">
+<li><p>Your pair doesn’t explain what they’re doing before they do it</p></li>
+<li><p>You feel lost but it seems like your pair isn’t lost at all</p></li>
+<li><p>You’re worried that you’re being bossy and taking over a lot</p></li>
+<li><p>Only one person wants to ask for help</p></li>
+</ul>
+</section>
+</section>
+<section class="section" id="troubleshooting">
+<h2>Troubleshooting</h2>
+<section class="section" id="if-you-re-slower-than-your-pair">
+<h3>If You’re Slower than Your Pair</h3>
+<ul class="simple">
+<li><p>This is a great opportunity to learn from a peer!</p></li>
+<li><p>Make sure you’re switching roles often</p></li>
+<li><p>Don’t be afraid to ask for what you need</p></li>
+</ul>
+</section>
+<section class="section" id="if-you-re-faster-than-your-pair">
+<h3>If You’re Faster than Your Pair</h3>
+<ul class="simple">
+<li><p>This is a great opportunity to solidify your knowledge!</p></li>
+<li><p>Explaining things to others helps deepen your own understanding</p></li>
+<li><p>Make sure you’re switching roles often</p></li>
+</ul>
+</section>
+<section class="section" id="if-you-tend-to-be-quiet">
+<h3>If You Tend to be Quiet</h3>
+<ul class="simple">
+<li><p>You’re here to learn and understand</p></li>
+<li><p>Getting the most out of exercises is important</p></li>
+<li><p>Your ideas are valuable, and will help your pair</p></li>
+<li><p>Make sure you’re switching roles often</p></li>
+<li><p>Remember — this is a safe place to practice speaking up</p>
+<ul>
+<li><p>That way, you’re prepared to do it in the workplace</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="section" id="if-you-tend-to-be-assertive">
+<h3>If You Tend to be Assertive</h3>
+<ul class="simple">
+<li><p>Make space for your pair to participate</p></li>
+<li><p>Check in to make sure they understand what’s happening</p></li>
+<li><p>Make sure you’re switching roles often</p></li>
+<li><p>Look for non-verbal cues</p></li>
+<li><p>Remember — this is a safe place to practice stepping up and stepping back</p>
+<ul>
+<li><p>That way, you’re prepared to do it in the workplace</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="section" id="all-types-of-folks-should">
+<h3>All types of folks should…</h3>
+<ul class="simple">
+<li><p>Learn the exercise materials</p></li>
+<li><p>Learn <strong>a lot</strong> about collaborating on code</p></li>
+<li><p>Deepen communication skills</p></li>
+</ul>
+<p><strong>These are all key job skills</strong>!</p>
+</section>
+</section>
+<section class="section" id="lines-to-try-when-things-go-wrong">
+<h2>Lines to Try When Things Go Wrong</h2>
+<section class="section" id="before-pairing">
+<h3>Before Pairing</h3>
+<p><strong>Set the Scene for Collaboration!</strong></p>
+<ul class="simple">
+<li><p>“What’s your pairing style?”</p></li>
+<li><p>“How often would you like to switch roles?”</p></li>
+<li><p>“Can you let me know if you want to slow down/speed up?”</p></li>
+<li><p>“Do you feel comfortable speaking up? If not, is there a sign I should look for?”</p></li>
+</ul>
+</section>
+<section class="section" id="during-pairing">
+<h3>During Pairing</h3>
+<p><strong>Keep Communicating!</strong></p>
+<ul class="simple">
+<li><p>“Can we test that in the console? That might be easier to understand”</p></li>
+<li><p>“Can we walk through the pseudo-code again?”</p></li>
+<li><p>“Can we slow down? I would like to read more about this first”</p></li>
+<li><p>“I didn’t get that. Could you explain it?”</p></li>
+<li><p>“Can we switch roles after each function/5 minutes?”</p></li>
+<li><p>“How’s this going? Do you want to take a break?”</p></li>
+</ul>
+</section>
+<section class="section" id="after-pairing">
+<h3>After Pairing</h3>
+<p><strong>Process and Improve!</strong></p>
+<ul class="simple">
+<li><p>“Thanks for pairing!”</p></li>
+<li><p>“How was that for you?”</p></li>
+<li><p>“Could I have done anything better?”</p></li>
+<li><p>“I liked the way you …”</p></li>
+<li><p>“I would have liked more …”</p></li>
+</ul>
+</section>
+<section class="section" id="enjoy-pairing">
+<h3>Enjoy Pairing!</h3>
+<p>You’ll practice pairing in lab today!</p>
+</section>
+</section>
+</section>
+ 
+      </main>
+
+      <footer id="page-footer">
+        <p>&copy; 2020 Hackbright Academy</p>
+      </footer>
+    </div>
+
+    <script src="_static/main.js"></script>
+  </body>
+</html>

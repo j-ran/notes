@@ -1,0 +1,72 @@
+***CHANGING TIMESTAMP FOR VIRTUAL BOX
+
+You will use the Terminal to change the time referenced by Virtual Box (and therefore by Vagrant and therefore by GitHub). 
+
+PLEASE NOTE: The farthest I got was that the time syncs to your local computer, however, it still reads with "UTC" as the timezone NAME. If anyone can go the next step and figure out how to change what that reads, it would be great. I give up for now on that.
+
+
+***VERIFY THE SITUATION
+I used Terminal to 'cd' into my folder called "vagrant."
+Your path, too, should be ~/src/vagrant to get there.
+
+Type "date." Is the date and time correct? Does it list your time zone correctly? It probably does.
+
+Now type "vagrant up" as we do to run Vagrant. 
+After "vagrant up" executes, type "vagrant ssh" (as we also always do).
+Type "date." Is it the same as when you were outside Vagrant, or different?
+You will notice it says the time and then lists "UTC" as the time zone (it is based on GMT but not identical). SF is UTC-8. Computers tend to sync on UTC to keep everything in line. 
+HOWEVER, WE CAN MESS THIS UP. I'll tell you how.
+
+
+***START CHANGING THINGS
+Through the Terminal, you are going to set a line of code in the file that Virtual Box uses to run. Don't try to go to the file to do it; I tried, and, unless you do it from the CLI, the changes will be overwritten.
+
+Leave Vagrant fully, with "logout" followed by "vagrant halt" commands. 
+
+Now you are back in the Terminal with (probably) the "~src/vagrant User$" prompt. You need to get the name of your virtual machine. To do that, run the following:
+
+$ VBoxManage list vms
+"vagrant_default_1609881298027_4077" {5b79377d-e05e-41b9-a7bf-094b34cc9523}
+
+The last bit in curly brackets is your VM_NAME.
+
+Now verify that your VM is using UTC with this code:
+$ VBoxManage getextradata 'copy your VM_NAME here' “VBoxInternal/Devices/mc146818/0/Config/UseUTC”
+
+     note for clarity – my VM_NAME that I copied is 5b79377d-e05e-41b9-a7bf-094b34cc9523
+
+Value: 1 
+is what you will see (probably) when you run the 'getextradata' code.
+That means that UTC is evaluated as True – it's being used.
+Now, we'll change that with a 'setextradata' command.
+
+$ VBoxManage getextradata 'copy your VM_NAME here' “VBoxInternal/Devices/mc146818/0/Config/UseUTC” 0
+
+And when we run the getextradata command:
+
+$ VBoxManage getextradata 'copy your VM_NAME here' “VBoxInternal/Devices/mc146818/0/Config/UseUTC”
+Value: 0
+
+Now when you bring up Vagrant, log in, and run "date," you will see the numbers match your local computer, though it still says UTC.
+
+
+***PLEASE REPORT BACK!
+Please let me know if you do this and it works. You can always change the value of UseUTC back to '1' and reset to the way it was.
+
+I am very curious if any of you lose time or slip around in the interval you see between your time and Vagrant-time. I saw some other comments online that led me to make a few other changes that have to do with re-syncing the machines when Vagrant restarts. I have some theories on that, but since I changed my code already, I have no control-case for testing (it's in the immutable file; so so tricky to change). Let me know if see anything funny start happening; I am curious.
+
+
+***RESOURCES
+
+Bundled in one URL here 
+https://www.one-tab.com/page/TJ4NfBFcTfKoSisi2dX0hw
+
+• [virtual machine - How to sync time on host wake-up within VirtualBox? - Stack Overflow](https://stackoverflow.com/questions/19490652/how-to-sync-time-on-host-wake-up-within-virtualbox)
+• [#1310 (Support running systems with “hardware” clock on UTC => Fixed in SVN)     – Oracle VM VirtualBox](https://www.virtualbox.org/ticket/1310)
+• [VirtualBox: How to sync host and guest time? - Super User](https://superuser.com/questions/463106/virtualbox-how-to-sync-host-and-guest-time)
+• [virtualbox.org • View topic - Deleting extradata via vboxmanage?](https://forums.virtualbox.org/viewtopic.php?t=45185)
+
+
+
+
+
