@@ -3,6 +3,12 @@ push_test.txt
 When I pushed from Vagrant, that now reads UTC-5, which is correct, it shows that I pushed five hours ago on the file. On the repo (GitHub API), it shows I was working a minute ago.
 
 Next tests:
-- git push from Terminal
+- #1 git push from Terminal
 then, if that doesn't work,
-- turn off UTC with VBoxManage
+- #2 turn off UTC with VBoxManage
+It was Value 1. Now I have changed to Value 0.
+Last chance is None.
+
+RESULT OF TEST #1 
+- git push from Terminal and not within Vagrant has perfect time sync when it shows up in GitHub
+
