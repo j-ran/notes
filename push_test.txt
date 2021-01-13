@@ -6,9 +6,12 @@ Next tests:
 - #1 git push from Terminal
 then, if that doesn't work,
 - #2 turn off UTC with VBoxManage
-It was Value 1. Now I have changed to Value 0.
+It was Value 1. Changed to Value 0, still doesn't work.
 Last chance is None.
 
 RESULT OF TEST #1 
 - git push from Terminal and not within Vagrant has perfect time sync when it shows up in GitHub
 
+RESULT OF TEST #2
+- Switched UseUTC to 0. Same as when using 1 - GitHub says the commit was 5 hours ago (it's referenced as if the file was created in UTC).
+Now trying UseUTC set to None.
