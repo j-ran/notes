@@ -1,1 +1,8 @@
 push_test.txt
+
+When I pushed from Vagrant, that now reads UTC-5, which is correct, it shows that I pushed five hours ago on the file. On the repo (GitHub API), it shows I was working a minute ago.
+
+Next tests:
+- git push from Terminal
+then, if that doesn't work,
+- turn off UTC with VBoxManage
