@@ -14,4 +14,33 @@ RESULT OF TEST #1
 
 RESULT OF TEST #2
 - Switched UseUTC to 0. Same as when using 1 - GitHub says the commit was 5 hours ago (it's referenced as if the file was created in UTC).
-Now trying UseUTC set to None.
+Now trying UseUTC set to None. - This does not change the result.
+
+In Vagrant, the correct time zone comes up. It is Etc/GMT+5. However, when the file is pushed, it compares the time stamp with UTC and says I did the work five hours ago. 
+Vagrant knows what time it is. I guess Virtual Box still does not know what time it is.
+
+TEST #3
+Changing Users/jranpura/.vagrant.d/boxes/bento-VAGRANTSLASH-ubuntu-18.04/2020.12.21.0/virtualbox/Vagrantfile
+
+File reads:
+
+Vagrant.configure("2") do |config|
+  if Vagrant.has_plugin?("vagrant-timezone")
+    config.timezone.value = "UTC"
+  end
+
+Changing config.timezone.value = ":host"
+Previously in my file it read Etc/GMT+5.
+:host is not recognized as a valid time zone, and Vagrant will not run.
+
+Current settings: UseUTC is at 0
+Changing Vagrantfile code for timezone, trying different names.
+
+Okay, now the guest says it is syncing. However, the time is always the time of here, of me. I need it to say my time and EST. That is not happening, though. What is happening is that the machine now thinks my local time is UTC.
+That is why I am going to reset UseUTC to 1.
+
+The best so far is "Etc/GMT+5", which reads accurately, even though it pushes to Git on UTC and makes it looks like I live five hours in the future.
+
+Will do a test, then
+TEST #4
+I will change every Vagrantfile I can to include reference to the plugin.
