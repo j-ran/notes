@@ -1,9 +1,0 @@
-env*
-*.DS_Store
-*secret*
-*.pyc
-__pycache__/
-*in-progress*
-*.psd
-*.pages
-*.pdf
